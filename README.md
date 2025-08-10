@@ -1,6 +1,6 @@
 # Mini-projects
 This is my first github upload which consist -
-<ul>
+<ol>
     <li>Dark mode theme changer</li>
     <li>Toc</li>
     <li>Banner slider</li>
@@ -8,4 +8,4 @@ This is my first github upload which consist -
     <li>Stop-watch</li>
     <li>Product searchbox</li>
     <li>Product filter</li>
-</ul>
+</ol>
