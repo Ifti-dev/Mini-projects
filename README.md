@@ -63,4 +63,56 @@ The selector <code>:checked + span::after</code> is used for the animation, sinc
 <p><em>We also used <code>scroll-behavior: smooth;</code> in CSS to make the scrolling smooth when clicking links.</em></p>
 
 
-<h2>Banner Slider</h2>
+<h2>3) Banner Slider</h2>
+
+<p>The banner slider has <strong>three main functionalities</strong> and uses a <code>slider_counter</code> variable to track the current slide index:</p>
+<ol>
+    <li>Automatic slide using <code>setInterval</code></li>
+    <li>Manual slide using <strong>Previous</strong> and <strong>Next</strong> buttons</li>
+    <li>Active dot indicator updates</li>
+</ol>
+
+<h3>1) Automatic Slide</h3>
+<p>We call an auto slide function every 2 seconds:</p>
+<ul>
+    <li>If we are at the <strong>last slide</strong>, set the next slide index to <code>0</code> (go back to the first slide).</li>
+    <li>Otherwise, increase the slide index by <code>1</code>.</li>
+    <li>Call the main <code>banner_sliding()</code> function to update the slider position.</li>
+</ul>
+
+<h3>2) Manual Slide</h3>
+
+<h4>2.0) Previous Button</h4>
+<ul>
+    <li>If at the <strong>first slide</strong>, set the index to the <strong>last slide</strong> (<code>slides.length - 1</code>).</li>
+    <li>Otherwise, decrease the slide index by <code>1</code>.</li>
+    <li>Call <code>banner_sliding()</code> and <code>reset_timer()</code>.</li>
+</ul>
+
+<h4>2.1) Next Button</h4>
+<ul>
+    <li>If at the <strong>last slide</strong> (<code>slides.length - 1</code>), set the index to <code>0</code>.</li>
+    <li>Otherwise, increase the slide index by <code>1</code>.</li>
+    <li>Call <code>banner_sliding()</code> and <code>reset_timer()</code>.</li>
+</ul>
+
+<h3>3) Main <code>banner_sliding()</code> Function</h3>
+<p>We move the slider container using the <code>transform: translateX()</code> property:</p>
+
+```javascript
+let move_pos = slider_counter * -100;
+banner_main_slider.style.transform = `translateX(${move_pos}%)`;
+
+<p>The percentage (<code>100%</code>, <code>50%</code>, <code>33%</code>, etc.) depends on how many slides you want to show per page. Update your CSS <code>.single-slide</code> width accordingly.</p> 
+<h3>4) Reset Timer Function</h3> 
+<ul> 
+    <li>Stops the current auto-slide interval using <code>clearInterval()</code>.</li> <li>Restarts it using <code>setInterval()</code> to avoid timing issues after manual navigation.</li> 
+</ul> 
+<h3>5) Active Dots</h3> 
+<ul> 
+    <li>Remove the <code>active</code> class from all dots.</li> 
+    <li>Add the <code>active</code> class to the dot matching the current slide index.</li> 
+</ul> 
+<p><strong>In short:</strong> We move the slider container by applying a translation based on the current <code>slider_counter</code>, which is updated by either the auto-slide function or the navigation buttons.</p>
+<p><strong>Short note</strong>If we use flex in the slider container it will shrink even if you set the slides width to 100% cause flex sets the flex shrink to 1 as default. So make sure you write <code> flex-shrink:0 </code> at slides css </p>
+
