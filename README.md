@@ -98,10 +98,10 @@ The selector <code>:checked + span::after</code> is used for the animation, sinc
 
 <h3>3) Main <code>banner_sliding()</code> Function</h3>
 <p>We move the slider container using the <code>transform: translateX()</code> property:</p>
-
-```javascript
+<code>
 let move_pos = slider_counter * -100;
 banner_main_slider.style.transform = `translateX(${move_pos}%)`;
+</code>
 
 <p>The percentage (<code>100%</code>, <code>50%</code>, <code>33%</code>, etc.) depends on how many slides you want to show per page. Update your CSS <code>.single-slide</code> width accordingly.</p> 
 <h3>4) Reset Timer Function</h3> 
