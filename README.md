@@ -61,3 +61,6 @@ The selector <code>:checked + span::after</code> is used for the animation, sinc
 </ol>
 
 <p><em>We also used <code>scroll-behavior: smooth;</code> in CSS to make the scrolling smooth when clicking links.</em></p>
+
+
+<h2>Banner Slider</h2>
