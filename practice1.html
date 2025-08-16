@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/practice1.css">
+    <script src="https://kit.fontawesome.com/bbf8f18e93.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body >
+    <main>
+        <section class="theme-changer-container container">
+            <label class="theme_changer_btn_container">
+                <input type="checkbox" id="theme_changer_btn">
+                <span class="theme_changer_btn_slide"></span> 
+            </label>
+            <!-- According to HTML specs, if an input is wrapped inside a label, 
+            clicking anywhere inside the label (including the span) will toggle the checkbox. -->
+         
+        </section>
+        <section class="toc_container">
+            <div class="toc_wrapper">
+                <!-- Toc link list will be added here using js-->
+            </div>
+        </section>
+
+
+        <section class="banner-slider-container container">
+            <h2 class="section-header">Banner Slider</h2>
+            <div class="banner-slider-wrapper">
+                <div class="next-button">
+                    <i class="fa-regular fa-circle-right"></i>
+                </div>
+                <div class="banner-slider">
+                    <div class="banner-slide"><img src="images/2.jpg" alt=""></div>
+                    <div class="banner-slide"><img src="images/3.jpg" alt=""></div>
+                    <div class="banner-slide"><img src="images/4.jpg" alt=""></div>
+                </div>
+                <div class="prev-button">
+                    <i class="fa-regular fa-circle-left"></i>  
+                </div>
+                
+            </div>
+            <div class="slider-bullets">
+                <span class="dots active"></span>
+                <span class="dots "></span>
+                <span class="dots "></span>
+            </div>
+        </section>
+
+        <section class="cal-container container">
+            <h2 class="section-header">Calculator</h2>
+            <div class="cal">
+                <div class="cal-head">
+                    <button id="cal-history-btn"><i class="fa-solid fa-clock-rotate-left"></i></button>
+                    <input type="text" name="calculator screen" id="cal-screen" class="cal-screen">
+                </div>
+                <div class="cal-body">
+                    <input type="button" name="calculator button" class="cal-btn" value="C" onclick="clearr()">
+                    <input type="button" name="calculator button" class="cal-btn" value="x*2" onclick="calculate('**2')">
+                    <input type="button" name="calculator button" class="cal-btn" value="%" onclick="calculate('%')">
+                    <input type="button" name="calculator button" class="cal-btn" value="DEL" onclick="del()">
+                    
+                    <input type="button" name="calculator button" class="cal-btn" value="/" onclick="calculate('/')">
+                    <input type="button" name="calculator button" class="cal-btn" value="7" onclick="calculate('7')">
+                    <input type="button" name="calculator button" class="cal-btn" value="8" onclick="calculate('8')">
+                    <input type="button" name="calculator button" class="cal-btn" value="9" onclick="calculate('9')">
+                    
+                    <input type="button" name="calculator button" class="cal-btn" value="*" onclick="calculate('*')">
+                    <input type="button" name="calculator button" class="cal-btn" value="4" onclick="calculate('4')">
+                    <input type="button" name="calculator button" class="cal-btn" value="5" onclick="calculate('5')">
+                    <input type="button" name="calculator button" class="cal-btn" value="6" onclick="calculate('6')">
+                    
+                    <input type="button" name="calculator button" class="cal-btn" value="-" onclick="calculate('-')">
+                    <input type="button" name="calculator button" class="cal-btn" value="1" onclick="calculate('1')">
+                    <input type="button" name="calculator button" class="cal-btn" value="2" onclick="calculate('2')">
+                    <input type="button" name="calculator button" class="cal-btn" value="3" onclick="calculate('3')">
+                    
+                    <input type="button" name="calculator button" class="cal-btn" value="+" onclick="calculate('+')">
+                    <input type="button" name="calculator button" class="cal-btn" value="0" onclick="calculate('0')">
+                    <input type="button" name="calculator button" class="cal-btn" value="." onclick="calculate('.')">
+                    <input type="button" name="calculator button" class="cal-btn" value="=" onclick="answer()">
+                    
+                </div>
+                <div class="history-container">
+                    <button onclick="clear_history()">Clear</button>
+                    <div class="history-list">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="stopwatch-container container">
+            <h2 class="section-header">Stop Watch</h2>
+            <div class="stopwatch-wrapper">
+                <div class="stopwatch-head">
+                    <div class="stopwatch-screen">
+                        <p class="stopwatch-screen-num">00:00:00</p>
+                    </div>
+                </div>
+                <div class="stopwatch-btn-cont">
+                    <button class="stopwatch-btn" onclick="stop_start()">Start</button>
+                    <button class="stopwatch-btn" onclick="stop_pause()">Pause</button>
+                    <button class="stopwatch-btn" onclick="stop_reset()">Reset</button>
+                </div>
+            </div>
+        
+        </section>
+
+
+        <section class="search_box_container container">
+            <h2 class="section-header">Search Box</h2>
+            <div class="search_box_wrapper">
+                <div class="search_box_head">
+                    <input type="text" id="product-search-box">
+                </div>
+                <div class="search_box_body">
+                    <div class="search_box_product">
+                        <img src="images/11.jpg" alt="">
+                        <div class="search_box_product_body">
+                            <h5>Innsaei Acne Cleansing Foam</h5>
+                            <div class="search_box_product_price">
+                                <span>250 </span><span><del>220</del></span>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="search_box_product">
+                        <img src="images/11.jpg" alt="">
+                        <div class="search_box_product_body">
+                            <h5>Innsaei Low Ph daily gel cleanser</h5>
+                            <div class="search_box_product_price">
+                                <span>250 </span><span><del>220</del></span>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="search_box_product">
+                        <img src="images/11.jpg" alt="">
+                        <div class="search_box_product_body">
+                            <h5>Signature Shampoo (400ml)</h5>
+                            <div class="search_box_product_price">
+                                <span>250 </span><span><del>220</del></span>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="search_box_product">
+                        <img src="images/11.jpg" alt="">
+                        <div class="search_box_product_body">
+                            <h5>Signature Shampoo (200ml)</h5>
+                            <div class="search_box_product_price">
+                                <span>250 </span><span><del>220</del></span>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="search_box_product">
+                        <img src="images/11.jpg" alt="">
+                        <div class="search_box_product_body">
+                            <h5>Germnil fruity shower gel</h5>
+                            <div class="search_box_product_price">
+                                <span>250 </span><span><del>220</del></span>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="search_box_product">
+                        <img src="images/11.jpg" alt="">
+                        <div class="search_box_product_body">
+                            <h5>Skin'O strawberry scented shower gel</h5>
+                            <div class="search_box_product_price">
+                                <span>250 </span><span><del>220</del></span>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="search_box_product">
+                        <img src="images/11.jpg" alt="">
+                        <div class="search_box_product_body">
+                            <h5>Skin'O rose scented shower gel</h5>
+                            <div class="search_box_product_price">
+                                <span>250 </span><span><del>220</del></span>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            
+        </section>
+        <section style="height: 500px;">
+
+        </section>
+
+        <section class="filter_product_container container">
+            <h2 class="section-header">Filter product</h2>
+            <div class="filter_product_wrapper">
+                <div class="filter_product_sidebar">
+                    <div class="filter_top">
+                        <h2>Filter</h2>
+                        <button id="filter_show_btn"><i class="fa-solid fa-caret-down"></i></button>
+                    </div>
+                    
+                    <div class="filter_wrapper">
+                        
+                        <button id="filter_hide_btn"><i class="fa-solid fa-caret-down"></i></button>
+                        <div class="filter_product_price_range">
+                            <input type="number" class="price_range_lower" id="price_range_lower" >
+                            -
+                            <input type="number" class="price_range_upper" id="price_range_upper" >
+                            <button id="filter_product_price_range_btn"><i class="fa-solid fa-play"></i></button>
+                        </div>
+                        <div class="filter_product_cat_filter">
+                            <h2 class="filter_headings">Categories</h2>
+                            <label for="shower_gel"><input type="checkbox" value="shower gel" id="shower_gel">Shower gel</label>
+                            <label for="facewash"><input type="checkbox" value="facewash" id="facewash">facewash</label>
+                        </div>                       
+                        <div class="filter_product_brand_filter">
+                            <h2 class="filter_headings">Brands</h2>
+                            <label for="skino"><input type="checkbox" value="skino" id="skino">Skino</label>
+                            <label for="germnil"><input type="checkbox" value="germnil" id="germnil">Germnil</label>
+                        </div>                       
+                    </div>  
+                </div>
+                <div class="filter_product_product_container">
+                    <div class="filter_product_product" data-category="facewash" data-brand="skino">
+                        <div class="filter_product_product_head">
+                            <img src="images/11.jpg" alt="">
+                        </div>
+                        <div class="filter_product_product_body">
+                            <h3>Skin'O milk facewash</h3>
+                            <div class="filter_product_price_box">
+                                <div class="new_price">220</div>
+                                <div class="old_price"><span><del>180</del></span>-20%</div>
+                            </div>
+                            <div class="filter_product_product_rating">
+                                <div class="rating_top" style="--rating:4.5;">
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="rating_bottom">
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter_product_product" data-category="cleanser" data-brand="innsaei">
+                        <div class="filter_product_product_head">
+                            <img src="images/11.jpg" alt="">
+                        </div>
+                        <div class="filter_product_product_body">
+                            <h3>innsaei cleanser</h3>
+                            <div class="filter_product_price_box">
+                                <div class="new_price">360</div>
+                                <div class="old_price"><span><del>180</del></span>-20%</div>
+                            </div>
+                            <div class="filter_product_product_rating">
+                                <div class="rating_top" style="--rating:4.5;">
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="rating_bottom">
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter_product_product" data-category="shower gel" data-brand="germnil">
+                        <div class="filter_product_product_head">
+                            <img src="images/11.jpg" alt="">
+                        </div>
+                        <div class="filter_product_product_body">
+                            <h3>Germnil shower gel</h3>
+                            <div class="filter_product_price_box">
+                                <div class="new_price">370</div>
+                                <div class="old_price"><span><del>180</del></span>-20%</div>
+                            </div>
+                            <div class="filter_product_product_rating">
+                                <div class="rating_top" style="--rating:4.5;">
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="rating_bottom">
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter_product_product" data-category="toner" data-brand="skino">
+                        <div class="filter_product_product_head">
+                            <img src="images/11.jpg" alt="">
+                        </div>
+                        <div class="filter_product_product_body">
+                            <h3>Skin'O tea tree toner</h3>
+                            <div class="filter_product_price_box">
+                                <div class="new_price">350</div>
+                                <div class="old_price"><span><del>180</del></span>-20%</div>
+                            </div>
+                            <div class="filter_product_product_rating">
+                                <div class="rating_top" style="--rating:4.5;">
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="rating_bottom">
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter_product_product" data-category="shower gel" data-brand="skino">
+                        <div class="filter_product_product_head">
+                            <img src="images/11.jpg" alt="">
+                        </div>
+                        <div class="filter_product_product_body">
+                            <h3>Skin'O Rose shower Gel</h3>
+                            <div class="filter_product_price_box">
+                                <div class="new_price">144</div>
+                                <div class="old_price"><span><del>250</del></span>-20%</div>
+                            </div>
+                            <div class="filter_product_product_rating">
+                                <div class="rating_top" style="--rating:4.5;">
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="rating_bottom">
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                   <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </section>
+    </main>
+    
+    <footer>
+        <script src="js/practice1.js"></script>
+    </footer>
+</body>
+</html>

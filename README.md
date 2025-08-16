@@ -153,6 +153,8 @@ banner_main_slider.style.transform = `translateX(${move_pos}%)`;
     <li>Since it’s called every 10ms, we increment <code>stop_ml</code> by 1 each time (meaning we display 1/100 of a second).</li>
     <li>If <code>stop_ml == 100</code> (i.e., 100 × 10ms = 1000ms), we reset <code>stop_ml</code> to 0 and increment <code>stop_sec</code> by 1.</li>
     <li>If <code>stop_sec == 59</code>, we reset <code>stop_sec</code> to 0 and increment <code>stop_min</code> by 1.</li>
+    <li>We used <code>let mil_sec = stop_ml < 10? `0${stop_ml}`: stop_ml</code> method so that when ever number is smaller than 10 a 0 is added at the front which will make the timer look good.</li>
+
 </ul>
 
 <p>When we click the <b>Stop</b> button:</p>
