@@ -10,7 +10,7 @@ This is my first github upload which consist -
     <li>Product filter</li>
 </ol>
 
-🌐 Live Site URL 👉 <br>[https://moms-recipe-project.netlify.app/]
+🌐 Live Site URL 👉 <br>[https://mini-projects-html-css-js.netlify.app/]
 <h2>1) Dark Mode Theme</h2>
 
 <p>In dark mode theme, we used a checkbox.  
